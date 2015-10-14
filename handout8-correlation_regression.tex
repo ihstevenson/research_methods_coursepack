@@ -101,7 +101,7 @@ Although, correlation does not imply causation, an important feature of correlat
 where $m$ is the slope of the line and $b$ defines the y-intercept. It turns out that after calculating the Pearson correlation coefficient the line of best fit is given by
 
 \begin{equation*}
-m=r\frac{s_x}{s_y} \qquad b=\bar{Y}-m\bar{X}
+m=r\frac{s_y}{s_x} \qquad b=\bar{Y}-m\bar{X}
 \end{equation*}
 
 
@@ -120,32 +120,87 @@ Regression is a powerful tool in psychology and many other fields. We will not s
 \pagebreak
 \section{Example}
 
-     5     0
-    -4     1
-     3     2
-    -2     7
-    13    -2
-     0     2
-     7     1
-     2     5
+\begin{description}
+\item[1.] Find the Pearson correlation between $X$ and $Y$
+\item[2.] Draw a scatter-plot of the data
+\item[3.] Describe the direction and strength of the correlation
+\item[4.] Is this correlation statistically significant ($\alpha=0.05$, two-tailed)?
+\item[5.] Find the line of best fit for these data and sketch it on your plot
+\end{description}
+
+\begin{table}
+  \centering
+  \fontfamily{ppl}\selectfont
+  \begin{tabular}{rrr}
+    \toprule
+Subject& $X$ & $Y$\\
+    \midrule
+1&     5&     0\\
+2&    -4&     1\\
+3&     3&     2\\
+4&    -2&     7\\
+5&    13&    -2\\
+6&     0 &    2\\
+7&     7 &    1\\
+8&     2 &    5\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:normaltab}
+  %\zsavepos{pos:normaltab}
+\end{table}
 
 \pagebreak
 \section{Solution}
 
-     5     0     2    -2    -4
-    -4     1    -7    -1     7
-     3     2     0     0     0
-    -2     7    -5     5   -25
-    13    -2    10    -4   -40
-     0     2    -3     0     0
-     7     1     4    -1    -4
-     2     5    -1     3    -3
-mean   3     2
-ss  204    56
-sp = -69
+\begin{fullwidth}
 
-r = -0.6456
-p = -0.3382    3.0147
-sd   5.3984    2.8284
+\begin{description}
+\item[1.] To find the Pearson correlation
+\begin{equation*}
+r=\frac{SP}{\sqrt{SS_X SS_Y}}
+\end{equation*}
+ we need to find the covariability $SP=\sum (X-\bar{X})(Y-\bar{Y})$\\ as well as the individual sums of squares $SS_X=\sum (X-\bar{X})^2$, $SS_Y=\sum (Y-\bar{Y})^2$.
+
+\begin{table}
+  \centering
+  \fontfamily{ppl}\selectfont
+  \begin{tabular}{rrrrrr}
+    \toprule
+Subject & $X$ & $Y$ & $(X-\bar{X})$ & $(Y-\bar{Y})$ & $(X-\bar{X})(Y-\bar{Y})$\\
+    \midrule
+1&     5&     0 &    2 &   -2&    -4\\
+2&    -4&     1 &   -7&    -1&     7\\
+3&     3&     2 &    0 &    0&     0\\
+4&    -2&     7 &   -5&     5&   -25\\
+5&    13&    -2&    10&    -4&   -40\\
+6&     0 &    2 &   -3 &    0&     0\\
+7&     7 &    1 &    4 &   -1&    -4\\
+8&     2 &    5 &   -1 &    3&    -3\\
+    \bottomrule
+Mean& 3 & 2&&&\\
+s& 5.4& 2.8 &&&\\
+$SS$& 204& 56&&&$SP$=-69\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:normaltab}
+  %\zsavepos{pos:normaltab}
+\end{table}
+\vspace{20pt}
+
+Then $r=\frac{SP}{\sqrt{SS_X SS_Y}}=\frac{-69}{\sqrt{204 \cdot 56}}=-0.65$.
+
+\item[3.] Based on the scatter-plot (below) and $r$ we see that $X$ and $Y$ are moderately and negatively correlated.
+\item[4.] To see if the correlation is statistically significant we need to compare the test statistic $r$ to a critical value. Using the Pearson's correlation table we find the column corresponding to $\alpha=0.05$, two-tailed and the row corresponding to $df=n-2=6$ where we see that $r_c=0.7067$. Since $-r_c<r<r_c$, we fail to reject the null hypothesis and cannot conclude that the association is statistically significant.
+\item[5.] To find the line of best fit we will solve for $m=r\frac{s_y}{s_x}$ and $b=\bar{Y}-m\bar{X}$. Plugging in our results from the table $m=-0.65\frac{2.8}{5.4}=-0.34$ and $b=2-(-0.34)(3)=3.02$. Meaning that our best fit line is $\hat{Y}=mX+b=-0.34X+3.02.$
+
+\begin{figure*}[h]
+  \includegraphics[width=155pt]{handout8_example}%
+  \label{fig:fullfig}%
+\end{figure*}
+
+
+\end{description}
+
+\end{fullwidth}
 \end{document}
 
