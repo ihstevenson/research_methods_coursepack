@@ -1,0 +1,29 @@
+\documentclass[tikz, border=10pt]{standalone}
+\tikzset{
+    vertex/.style = {
+        circle,
+        fill            = black,
+        outer sep = 4pt,
+        inner sep = 4pt,
+    }
+}
+\begin{document}
+\begin{tikzpicture}
+  \node[draw] (Total) at (0,0) {Total};
+
+  \node[draw] (Between) at (-1,-1) {Between};
+  \node[draw] (Within) at (1,-1) {Within};
+
+%  \node[draw] (A) at (-2,-2) {A};
+%  \node[draw] (B) at (-1.1,-2) {B};
+%  \node[draw] (AxB) at (0,-2) {AxB};
+  
+ \draw[->,thick,-] (Total) to (Between);
+ \draw[->,thick,-] (Total) to (Within);
+
+%  \draw[->,thick,-] (Between) to (A);
+%  \draw[->,thick,-] (Between) to (B);
+%  \draw[->,thick,-] (Between) to (AxB);
+  
+\end{tikzpicture}
+\end{document}
